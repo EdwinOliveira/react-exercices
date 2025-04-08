@@ -1,7 +1,7 @@
 import Counter from "./components/counter";
 
 import "./app.css";
-import TicTacToe from "./components/tic-tac-toe";
+import ColorPicker from "./components/color-picker";
 
 const App = () => {
 	return (
@@ -9,7 +9,7 @@ const App = () => {
 			<div id="wrapper">
 				<Counter />
 				<hr />
-				<TicTacToe />
+				<ColorPicker />
 			</div>
 		</>
 	);
