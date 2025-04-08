@@ -1,7 +1,8 @@
 import Counter from "./components/counter";
+import ColorPicker from "./components/color-picker";
 
 import "./app.css";
-import ColorPicker from "./components/color-picker";
+import Scheduler from "./components/scheduler";
 
 const App = () => {
 	return (
@@ -10,6 +11,8 @@ const App = () => {
 				<Counter />
 				<hr />
 				<ColorPicker />
+				<hr />
+				<Scheduler />
 			</div>
 		</>
 	);
