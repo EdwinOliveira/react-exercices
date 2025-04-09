@@ -1,8 +1,9 @@
 import Counter from "./components/counter";
-import ColorPicker from "./components/color-picker";
+import ColorPicker from "./components/colorPicker";
+import Scheduler from "./components/scheduler";
+import WordPicker from "./components/wordPicker";
 
 import "./app.css";
-import Scheduler from "./components/scheduler";
 
 const App = () => {
 	return (
@@ -13,6 +14,8 @@ const App = () => {
 				<ColorPicker />
 				<hr />
 				<Scheduler />
+				<hr />
+				<WordPicker />
 			</div>
 		</>
 	);
