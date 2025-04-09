@@ -1,0 +1,15 @@
+#tic-tac-toe_grid {
+	display: grid;
+	grid-template-columns: repeat(3, 0.1fr);
+	justify-content: center;
+	gap: 5px;
+}
+
+span {
+	border: solid 1px currentColor;
+	width: 5rem;
+	height: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
