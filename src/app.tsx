@@ -3,14 +3,17 @@ import ColorPicker from "./components/colorPicker";
 import Scheduler from "./components/scheduler";
 import WordPicker from "./components/wordPicker";
 import TicTacToe from "./components/ticTacToe";
+import SearchForm from "./components/searchForm";
 
 import "./app.css";
-import SearchForm from "./components/search-form";
+import ColorPointer from "./components/colorPointer";
 
 const App = () => {
 	return (
 		<>
 			<div id="wrapper">
+				<ColorPointer />
+				<hr />
 				<Counter />
 				<hr />
 				<ColorPicker />
@@ -22,6 +25,8 @@ const App = () => {
 				<TicTacToe />
 				<hr />
 				<SearchForm />
+				<hr />
+				<ColorPointer />
 			</div>
 		</>
 	);

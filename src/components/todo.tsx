@@ -7,7 +7,12 @@ export type TodoProps = {
 	onComplete: (id: number) => void;
 };
 
-const Todo = ({ id, designation, isCompleted, onComplete }: TodoProps) => {
+const Todo: React.FC<TodoProps> = ({
+	id,
+	designation,
+	isCompleted,
+	onComplete,
+}) => {
 	return (
 		<>
 			<div id="todo">

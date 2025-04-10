@@ -2,7 +2,7 @@ type InputProps = {
 	onAction: (rawText: string) => void;
 };
 
-const Input = ({ onAction }: InputProps) => {
+const Input: React.FC<InputProps> = ({ onAction }) => {
 	const handleBlur = (data: React.FocusEvent<HTMLInputElement, Element>) => {
 		if (data.target.value === "") {
 			return;
