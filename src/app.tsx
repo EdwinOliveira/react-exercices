@@ -5,6 +5,7 @@ import WordPicker from "./components/wordPicker";
 import TicTacToe from "./components/ticTacToe";
 
 import "./app.css";
+import SearchForm from "./components/search-form";
 
 const App = () => {
 	return (
@@ -19,6 +20,8 @@ const App = () => {
 				<WordPicker />
 				<hr />
 				<TicTacToe />
+				<hr />
+				<SearchForm />
 			</div>
 		</>
 	);
