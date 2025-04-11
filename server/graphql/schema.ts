@@ -7,22 +7,23 @@ const schema = buildSchema(`
   }
 
   type Query {
-    findTodos: [Todo]!
-    findTodoById(id: ID!): Todo!
+    findProducts: [Product]!
+    findProductById(id: ID!): Product
   }
 
   type Mutation {
-    createTodo(input: CreateTodoInput): Todo
+    createProduct(input: CreateProductInput!): Product
   }
 
-  type Todo {
+  type Product {
     id: ID!
     designation: String!
-    isCompleted: Boolean!
+    price: Int!
   }
 
-  input CreateTodoInput {
+  input CreateProductInput {
     designation: String!
+    price: Int!
   }
 `);
 

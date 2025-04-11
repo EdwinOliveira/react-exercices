@@ -1,24 +1,16 @@
-import type { CreateTodoInput } from "./inputs";
+import { FindProductsResolver } from "./queries/findProductsResolver";
+import { FindProductByIdResolver } from "./queries/findProductByIdResolver";
+import { CreateProductResolver } from "./mutations/createProductResolver";
 
 const createResolvers = () => {
-	const findTodos = () => {
-		return [{ id: 1, designation: "dummy", isCompleted: false }];
-	};
-
-	const findTodoById = ({ id }: { id: string }) => {
-		return { id, designation: "dummy", isCompleted: false };
-	};
-
-	const createTodo = ({
-		input: { designation },
-	}: Record<string, CreateTodoInput>) => {
-		return { id: 1, designation, isCompleted: false };
-	};
+	const { findProducts } = FindProductsResolver();
+	const { findProductById } = FindProductByIdResolver();
+	const { createProduct } = CreateProductResolver();
 
 	return {
-		findTodoById,
-		findTodos,
-		createTodo,
+		findProducts,
+		findProductById,
+		createProduct,
 	};
 };
 export { createResolvers };
