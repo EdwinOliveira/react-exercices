@@ -8,7 +8,6 @@ const ProductLocalRepository = (): ProductRepository => {
 			return products;
 		},
 		findProductById: (id: number) => {
-			console.log(products);
 			return products.find((product) => product.id === id);
 		},
 		createProduct: (designation: string, price: number) => {
