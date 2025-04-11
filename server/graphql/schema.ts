@@ -8,7 +8,7 @@ const schema = buildSchema(`
 
   type Query {
     findProducts: [Product]!
-    findProductById(id: ID!): Product
+    findProductById(input: FindProductByIdInput!): Product
   }
 
   type Mutation {
@@ -19,6 +19,10 @@ const schema = buildSchema(`
     id: ID!
     designation: String!
     price: Int!
+  }
+
+  input FindProductByIdInput {
+    id: ID!
   }
 
   input CreateProductInput {

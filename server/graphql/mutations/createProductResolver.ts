@@ -1,5 +1,9 @@
-import type { CreateProductInput } from "../../domain/Product";
+import {
+	createProductSchema,
+	type CreateProductInput,
+} from "../../domain/Product";
 import { ProductLocalRepository } from "../../repositories/productLocalRepository";
+import type { Input } from "../types";
 
 const CreateProductResolver = () => {
 	const { createProduct } = ProductLocalRepository();
@@ -7,8 +11,15 @@ const CreateProductResolver = () => {
 	return {
 		createProduct: ({
 			input: { designation, price },
-		}: Record<string, CreateProductInput>) => {
-			return createProduct(designation, price);
+		}: Input<CreateProductInput>) => {
+			const { data: schemaArgs, error: schemaErrors } =
+				createProductSchema.safeParse({ designation, price });
+
+			if (schemaErrors !== undefined) {
+				return {};
+			}
+
+			return createProduct(schemaArgs.designation, schemaArgs.price);
 		},
 	};
 };
