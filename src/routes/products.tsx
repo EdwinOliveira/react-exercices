@@ -1,7 +1,7 @@
 import { useFindProducts } from "../hooks/useFindProducts";
-import "./product.css";
 import { useCreateProduct } from "../hooks/useCreateProduct";
 import { useFindProductById } from "../hooks/useFindProductById";
+import { Product } from "../components/product";
 
 const Products = () => {
 	const { findProducts, products } = useFindProducts();
@@ -41,11 +41,7 @@ const Products = () => {
 					<button type="submit"> Search Product </button>
 				</form>
 				{products.map((product) => (
-					<div key={product.id} id="product">
-						<p> {product.id} </p>
-						<p> {product.designation} </p>
-						<p> {product.price} </p>
-					</div>
+					<Product key={product.id} {...product} />
 				))}
 			</div>
 		</>
