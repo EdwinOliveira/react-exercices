@@ -1,11 +1,10 @@
+import "./app.css";
 import Counter from "./components/counter";
 import ColorPicker from "./components/colorPicker";
 import Scheduler from "./components/scheduler";
 import WordPicker from "./components/wordPicker";
 import TicTacToe from "./components/ticTacToe";
 import SearchForm from "./components/searchForm";
-
-import "./app.css";
 import ColorPointer from "./components/colorPointer";
 
 const App = () => {

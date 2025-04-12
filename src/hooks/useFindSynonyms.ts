@@ -19,7 +19,7 @@ const useFindSynonyms = () => {
 	const findSynonyms = async ({ word, option }: FindSynonymRequest) => {
 		setIsLoading(true);
 		const request = { [option]: word };
-		const response = await createRequest("words", "GET", request);
+		const response = await createRequest("dataMuse", "/words", "GET", request);
 		const rows = (await response.json()) as Array<FindSynonymDTO>;
 		rows.sort((row) => row.score);
 		setWords(rows.map((row) => row.word));

@@ -1,12 +1,23 @@
+type Hosts = {
+	dataMuse: string;
+	localhost: string;
+};
+
 const FetchProvider = () => {
+	const hosts: Hosts = {
+		dataMuse: "https://api.datamuse.com",
+		localhost: "http://localhost:7000/graphql",
+	};
+
 	const createRequest = (
+		httpHost: keyof Hosts,
 		httpRoute: string,
 		httpMethod: "GET" | "POST" | "PUT" | "DELETE",
 		httpQueries: Record<string, unknown> = {},
 		httpParams: Record<string, unknown> = {},
 		httpBody: Record<string, unknown> = {},
 	) => {
-		let buildedURL = `https://api.datamuse.com/${httpRoute}`;
+		let buildedURL = `${hosts[httpHost]}${httpRoute}`;
 
 		for (const httpQuery of Object.entries(httpQueries)) {
 			buildedURL = buildedURL.includes("?")

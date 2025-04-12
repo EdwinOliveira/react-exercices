@@ -1,0 +1,11 @@
+#product {
+	display: flex;
+	flex-direction: row;
+	gap: 5rem;
+}
+
+#products-maker {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+}
